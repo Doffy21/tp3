@@ -1,17 +1,16 @@
+package src.filter;
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 public class GaussianContourExtractorFilter implements IFilter {
 
-    private final int margin = 5;
-
-    @Override
     public int getMargin() {
-        return margin;
+        return 5;
     }
 
-    @Override
     public void applyFilterAtPoint(int x, int y, BufferedImage imgIn, BufferedImage imgOut) {
+        int margin = getMargin();
         double dx = 0.0;
         double dy = 0.0;
 

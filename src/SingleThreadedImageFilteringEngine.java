@@ -1,32 +1,32 @@
+package src;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+
+import src.filter.IFilter;
+import src.filter.IImageFilteringEngine;
 
 public class SingleThreadedImageFilteringEngine implements IImageFilteringEngine {
 
     private BufferedImage img;
 
-    @Override
     public void loadImage(String inputImage) throws Exception {
         img = ImageIO.read(new File(inputImage));
     }
 
-    @Override
     public void writeOutPngImage(String outFile) throws Exception {
         ImageIO.write(img, "png", new File(outFile));
     }
 
-    @Override
     public void setImg(BufferedImage newImg) {
         this.img = newImg;
     }
 
-    @Override
     public BufferedImage getImg() {
         return img;
     }
 
-    @Override
     public void applyFilter(IFilter someFilter) {
         int m = someFilter.getMargin();
         int w = img.getWidth();

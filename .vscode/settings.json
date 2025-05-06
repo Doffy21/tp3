@@ -1,6 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\coren\\Downloads\\junit-4.11.jar"
-    ]
-}
