@@ -7,10 +7,9 @@
  * 
  */
 
-import javax.imageio.ImageIO;
 import java.awt.image.*;
-import java.awt.Color ;
 import java.io.File;
+import javax.imageio.ImageIO ;
 
 /**
  * @author Francois Taiani   <francois.taiani@irisa.fr>
@@ -30,10 +29,10 @@ public class SimpleImageProcessingExample {
           int rgb    = inImg.getRGB(x,y);
           // extracting red, green and blue components from rgb integer
           int red    = (rgb >> 16) & 0x000000FF;
-          int green  = (rgb >>  8) & 0x000000FF;
-          int blue   = (rgb      ) & 0x000000FF;
+          //int green  = (rgb >>  8) & 0x000000FF;
+          //int blue   = (rgb      ) & 0x000000FF;
           // computing new color from extracted components
-          int newRgb = ( ( (green << 8) | blue ) << 8 ) | red ; // rotating RGB values
+          int newRgb = (red << 16); // rotating RGB values
           outImg.setRGB(x,y,newRgb);
       } // EndFor y
     } // EndFor x
