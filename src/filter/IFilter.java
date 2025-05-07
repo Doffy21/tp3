@@ -1,3 +1,5 @@
+package src.filter;
+
 /**
  * IFilter.java
  * 
@@ -13,8 +15,9 @@
 import java.awt.image.*;
 
 public interface IFilter {
-  public int  getMargin();
+  public int getMargin();
+
   public void applyFilterAtPoint(int x, int y,
-                                 BufferedImage imgIn,
-                                 BufferedImage imgOut);
+      BufferedImage imgIn,
+      BufferedImage imgOut);
 } // EndInterface IFilter
